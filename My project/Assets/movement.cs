@@ -13,11 +13,12 @@ public class movement : MonoBehaviour
     public float r;
     public LayerMask whatIsGround;
     private bool grounded;
-
+ private Animator anim;
+ 
     // Start is called before the first frame update
     void Start()
     {
-        
+         anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -46,9 +47,17 @@ GetComponent<Rigidbody2D>().velocity=new Vector2(movespeed,GetComponent<Rigidbod
 
             GetComponent<Rigidbody2D>().velocity=new Vector2(GetComponent<Rigidbody2D>().velocity.x,jumph);
         }
+
+
+        anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+        anim.SetFloat("Height", GetComponent<Rigidbody2D>().velocity.y);
+        anim.SetBool("Grounded", grounded);
+
     }
 
     void FixedUpdate(){
         grounded=Physics2D.OverlapCircle(groundcheck.position,r,whatIsGround);
+
+
     }
 }
