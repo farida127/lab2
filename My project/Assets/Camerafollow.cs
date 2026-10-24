@@ -25,6 +25,7 @@ public float maxX,maxY;
        Vector2 newcamPosition = Vector2.Lerp(transform.position,Target.position,Time.deltaTime * Cameraspeed);
        float ClampX =Mathf.Clamp(newcamPosition.x,minX,maxX);
        float ClampY =Mathf.Clamp(newcamPosition.y,minY,maxY);
+       transform.position= new Vector3(ClampX,ClampY,-10f);
         }
 }
 }

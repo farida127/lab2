@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - wall
   layers:
   - Default
   - TransparentFX
@@ -44,9 +45,9 @@ TagManager:
   - name: sky
     uniqueID: 2409488449
     locked: 0
-  - name: character
-    uniqueID: 3766026753
-    locked: 0
   - name: ground
     uniqueID: 3503678795
+    locked: 0
+  - name: character
+    uniqueID: 3766026753
     locked: 0
